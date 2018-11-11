@@ -4,12 +4,12 @@ def main():
     cubeInfo = parseInput() # parse input
     for info in range(0, len(cubeInfo)):
         cubeA, nCubes = volumeofCubeA(cubeInfo[info])
-        fillCubeCount = calculateCubes(cubeA, nCubes, 0)
+        fillCubeCount = calculateCubes(cubeA, nCubes)
         print(fillCubeCount)
         print()
         fillCubeCount = 0
 
-def calculateCubes( cubeA, nCubes, fillCubeCount):
+def calculateCubes( cubeA, nCubes):
     '''
     params:
         cubeA: the volume of the cube we are filling
@@ -19,8 +19,12 @@ def calculateCubes( cubeA, nCubes, fillCubeCount):
         -1 if we cant fill cube A
         fillCubeCount if we did fill cube A
     '''
-    for cube in range(len(nCubes)-1, -1, -1): # go backwards through the list to subtract the maximum cube sizes first
+    # go backwards through the list to subtract the maximum cube sizes first
     # this will minimize the number of cubes it takes to fill cube A
+    if cubeA == 0: # the cube is not fillable because it dosent take up space
+        return -1
+    fillCubeCount = 0
+    for cube in range(len(nCubes)-1, -1, -1):
         volumeOfCubeN = pow(pow(2,cube),3)
     # continue subtracting values when we still have space left in Cube A and we still have cubes in to subtract with
     # and the volume of cube N is not zero and the volume of cube N is less than the volume of cube A
@@ -29,7 +33,7 @@ def calculateCubes( cubeA, nCubes, fillCubeCount):
             cubeA = cubeA - volumeOfCubeN
             nCubes[cube] = nCubes[cube] - 1
             fillCubeCount = fillCubeCount + 1
-    if cubeA > 0:
+    if cubeA > 0: # we did not fill the cube all the way
         return -1
     return fillCubeCount
 
