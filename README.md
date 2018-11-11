@@ -1,7 +1,7 @@
 # Cubes
 
 -------------------------
-###How To:
+### How To:
 What you need to run it:
 0. Clone repo
 1. Have python3 installed
@@ -14,7 +14,7 @@ What you need to run it:
     * python3 cubeTests.py
 
 -------------------------
-###Programming test:
+### Programming test:
 As a part of the interview and evaluation process at ----, we'd like to get an impression of how you write code and how you approach problem solving.
 Your solution to the problem below will serve as a part of our overall evaluation, so don't worry if your solution isn't perfect. In the classic computer science textbook "The Structure and Interpretation of Computer Programs" (Abelson & Sussman, 1984), the authors write: `"Thus, programs must be written for people to read, and only incidentally for machines to execute"`, so keep that in mind when implementing your solution.
  
@@ -48,12 +48,19 @@ program.
 Examples:
 Assume the file ‘problems.txt’ contains:
 10 10 10 2000
+
 10 10 10 900
+
 4 4 8 10 10 1
+
 5 5 5 61 7 1
+
 5 5 6 61 4 1
+
 1000 1000 1000 0 0 0 46501 0 2791 631 127 19 1
+
 1 1 9 9 1
+
 Then executing
 ./myprogram < problems.txt
 should print the following to stdout:
