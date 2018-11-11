@@ -1,17 +1,37 @@
-import sys
+import sys, math
 
 def main():
-    inputFile = sys.argv[1]
-    cubeInfo = parseInput(inputFile)
-
+    cubeInfo = parseInput() # parse input
     for info in range(0, len(cubeInfo)):
         cubeA, nCubes = volumeofCubeA(cubeInfo[info])
-        for cube in range(0, len(nCubes)):
-            print(nCubes[cube])
-    # calculate line by line the cubes that fit
-    # for cubes in cubeInfo:
+        fillCubeCount = calculateCubes(cubeA, nCubes, 0)
+        print(fillCubeCount)
+        print()
+        fillCubeCount = 0
 
-
+def calculateCubes( cubeA, nCubes, fillCubeCount):
+    '''
+    params:
+        cubeA: the volume of the cube we are filling
+        nCubes: the list of cubes we are filling cube A with
+        fillCubeCount:  starts as zero and as we subtract cube volumnes from cube A we add to This
+    return:
+        -1 if we cant fill cube A
+        fillCubeCount if we did fill cube A
+    '''
+    for cube in range(len(nCubes)-1, -1, -1): # go backwards through the list to subtract the maximum cube sizes first
+    # this will minimize the number of cubes it takes to fill cube A
+        volumeOfCubeN = pow(pow(2,cube),3)
+    # continue subtracting values when we still have space left in Cube A and we still have cubes in to subtract with
+    # and the volume of cube N is not zero and the volume of cube N is less than the volume of cube A
+        while(cubeA >= 0  and nCubes[cube] > 0 and nCubes[cube] != 0 and volumeOfCubeN <= cubeA):
+            # print("cubeA: " + str(cubeA) + " - volume of cube at " +str(cube)+ " where the volume is " + str(pow(pow(2,cube),3)))
+            cubeA = cubeA - volumeOfCubeN
+            nCubes[cube] = nCubes[cube] - 1
+            fillCubeCount = fillCubeCount + 1
+    if cubeA > 0:
+        return -1
+    return fillCubeCount
 
 def volumeofCubeA( listOfCubes ):
     '''
@@ -20,22 +40,35 @@ def volumeofCubeA( listOfCubes ):
     ex:
 
     '''
-    print(listOfCubes)
     #      length           * width            * height          , [x, y, ... z]
-    return int(listOfCubes[0]) * int(listOfCubes[1]) * int(listOfCubes[2]), listOfCubes[3:]
+    return listOfCubes[0] * listOfCubes[1] * listOfCubes[2], listOfCubes[3:]
 
 
-def parseInput(inputFile):
+def parseInput():
     '''
-    This function takes file input and converts it into line by line list,
+    This function checks for command line input or standard in for file information
+    and converts it into a line by line list,
     I am going to assume for now that only valid files will be used.
     returns a list of all cube data
     '''
-    x = ""
+    lines = ""
+
+    # command line input
+    if len(sys.argv) > 1:
+        with open(sys.argv[1], encoding="utf-8") as file:
+            lines = [l.strip() for l in file]
+
+    # sdandard in
+    else:
+        lines = sys.stdin.readlines()
+        lines = [l.strip() for l in lines]
+
+    # make it a list of integers and strip spaces
     actual = []
-    with open(inputFile, encoding="utf-8") as file:
-        x = [l.strip() for l in file]
-    for item in range(0, len(x)):
-        actual.append(x[item].split(" "))
+    for item in range(0, len(lines)):
+        temp = lines[item].split(" ")
+        temp = list(map(int, temp))
+        actual.append(temp)
+
     return actual
 if __name__ == "__main__": main()
