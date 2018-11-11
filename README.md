@@ -1,7 +1,20 @@
 # Cubes
 
+-------------------------
+###How To:
+What you need to run it:
+0. Clone repo
+1. Have python3 installed
+2. I have configured multiple ways for you to run this script:
+    * ./runner problems.txt
+    * python3 cubes.py problems.txt
+    * python3 cubes.py < problems.txt
+3. You can run the unit test file using:
+    * ./test.sh
+    * python3 cubeTests.py
 
-Programming test:
+-------------------------
+###Programming test:
 As a part of the interview and evaluation process at ----, we'd like to get an impression of how you write code and how you approach problem solving.
 Your solution to the problem below will serve as a part of our overall evaluation, so don't worry if your solution isn't perfect. In the classic computer science textbook "The Structure and Interpretation of Computer Programs" (Abelson & Sussman, 1984), the authors write: `"Thus, programs must be written for people to read, and only incidentally for machines to execute"`, so keep that in mind when implementing your solution.
  
@@ -52,28 +65,18 @@ should print the following to stdout:
 50070
 9
 -------------------------
-Approach:
+###Approach:
 
-I think that this could be done with calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill cube A with.
+I think that this could be done by calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill cube A with.
 
 Given: a 10x10x10 cube A with a volume of w*l*h = 1000 units^3. With a list of cubes denoted by [b,c, ..., z] where the index of the cube in the list determines the volume the cube 2^(list index of b,c,...,z) and the value at that index is the number of cubes with that volume.
 
 We can find the total number of cubes that fit in cube A by subtracting cube at N's volume from cube A's volume to see if that cube will fit. Once cube A's volume is zero we can no longer fit other cubes in cube A and thus we end the sequence.
 -------------------------
+###Testing
 Edge cases:
 1. No cubes listed will fit Cube A
 2. Cubes listed will fit but not fill Cube A
 3. Cube A is zero volume
 4. ...
 Coverage of edge cases can be seen in the cubeTests.py file
--------------------------
-What you need to run it:
-0. Clone repo
-1. Have python3 installed
-2. I have configured multiple ways for you to run this script:
-    * ./runner problems.txt
-    * python3 cubes.py problems.txt
-    * python3 cubes.py < problems.txt
-3. You can run the unit test file using:
-    * ./test.sh
-    * python3 cubeTests.py
