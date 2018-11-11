@@ -1,6 +1,5 @@
 # Cubes
 
----
 ### How To:
 What you need to run it:
 0. Clone repo
@@ -14,11 +13,14 @@ What you need to run it:
     * python3 cubeTests.py
 
 ---
+
 ### Programming test:
 In the classic computer science textbook "The Structure and Interpretation of Computer Programs" (Abelson & Sussman, 1984), the authors write: `"Thus, programs must be written for people to read, and only incidentally for machines to execute"`, so keep that in mind when implementing your solution.
  
 This solution uses Python3 for the meat of the solution and bash scripting for user friendly running.
+
 ---
+
 You are given a box with integer dimensions length x width x height. You
 also have a set of cubes whose sides are powers of 2, e.g. 1x1x1, 2x2x2,
 4x4x4 etc.
@@ -75,6 +77,7 @@ should print the following to stdout:
 50070
 
 9
+
 ---
 ### Approach:
 
