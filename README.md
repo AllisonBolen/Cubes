@@ -15,7 +15,7 @@ What you need to run it:
 
 ---
 ### Programming test:
-As a part of the interview and evaluation process at ----, we'd like to get an impression of how you write code and how you approach problem solving.
+As a part of the interview and evaluation process, we'd like to get an impression of how you write code and how you approach problem solving.
 Your solution to the problem below will serve as a part of our overall evaluation, so don't worry if your solution isn't perfect. In the classic computer science textbook "The Structure and Interpretation of Computer Programs" (Abelson & Sussman, 1984), the authors write: `"Thus, programs must be written for people to read, and only incidentally for machines to execute"`, so keep that in mind when implementing your solution.
  
 Please describe which of the provided test cases fail (if any), and where you think the problem might be.The solution may be implemented in any programming language, so use whatever you feel most comfortable with.
