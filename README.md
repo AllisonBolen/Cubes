@@ -63,11 +63,17 @@ Then executing
 ./myprogram < problems.txt
 should print the following to stdout:
 1000
+
 -1
+
 9
+
 62
+
 59
+
 50070
+
 9
 ---
 ### Approach:
