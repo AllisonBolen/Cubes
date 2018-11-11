@@ -79,6 +79,7 @@ should print the following to stdout:
 9
 
 ---
+
 ### Approach:
 
 I think that this could be done by calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill cube A with.
@@ -86,7 +87,9 @@ I think that this could be done by calculating the volume of the initial cube (C
 Given: a 10x10x10 cube A with a volume of w*l*h = 1000 units^3. With a list of cubes denoted by [b,c, ..., z] where the index of the cube in the list determines the volume the cube 2^(list index of b,c,...,z) and the value at that index is the number of cubes with that volume.
 
 We can find the total number of cubes that fit in cube A by subtracting cube at N's volume from cube A's volume to see if that cube will fit. Once cube A's volume is zero we can no longer fit other cubes in cube A and thus we end the sequence.
+
 ---
+
 ### Testing
 Edge cases:
 1. No cubes listed will fit Cube A
