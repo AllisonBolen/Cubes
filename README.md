@@ -70,13 +70,13 @@ should print the following to stdout:
 
 9
 
-62     ** I disagree with this **
+62     **I disagree with this**
 
 59
 
 50070
 
-9      ** I also disagree with this **
+9      **I also disagree with this**
 
 **see bottom of readme for why**
 
