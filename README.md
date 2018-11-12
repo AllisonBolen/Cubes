@@ -114,6 +114,8 @@ The reason it should be 2 instead of 9:
 We will start by subtracting the largest amount first, this will minimize the number of cubes it takes to fill the box. We will subtract 8 units<sup>3</sup> from 9 units<sup>3</sup> to get 1 units<sup>3</sup> remaining. In other words we just filled our 9 units<sup>3</sup> cube with a 8 units<sup>3</sup> cube and now we have 1 units<sup>3</sup> left to fill. Since we just used up our one of our 9 cubes of volume 8 units<sup>3</sup> we now have 8 cubes of 8 units<sup>3</sup>. We can no longer fit cubes of 8 units<sup>3</sup> into the space remaining in the box so we then move to the next set of cubes with the largest volume. This would be our set of 9 cubes with 1 units<sup>3</sup> of volume. For this one we will see how many volume units of 1 can fit into 1 by using subtraction. We will subtract 1 until we either run out of cubes with this volume or until we can no longer fit 1 units<sup>3</sup> into the box. We find that 1units<sup>3</sup> fits in 1units<sup>3</sup> 1 time. So now we have used 1 cubes to fill our box with 0 units<sup>3</sup> left to fill. This leaves us with having used 2 cubes to fill the box, while minimizing the number of cubes it takes to fill the box.
 A way you could get 9 cubes to fill the box would be if you did not have any cubes of 8 units<sup>3</sup> and only have cubes of 1 units<sup>3</sup>. Then it will take 9 cubes of 1 units<sup>3</sup> to fill the box.
 
+All other output for the example matched what I calculated and I could not find a better way to minimize those results. 
+
 ---
 
 ### Approach:
