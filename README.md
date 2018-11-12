@@ -101,8 +101,9 @@ For the above example my program calculates:
 2
 
 This differs from the problem statement example on two instances:
-instead of 62 for cube info of: 5 5 5 61 7 1. I got 13. I think my answer is correct because we are looking for the
-*smallest* number of cubes it takes to fill cube A. In this case the volume of cube A would be 125 units<sup>3</sup> and we were given 61 cubes of voulme 1units cubed
+
+1. Instead of 62 for cube info of: `5 5 5 61 7 1`. **I got 13**. I think my answer is correct because we are looking for the
+*smallest* number of cubes it takes to fill cube A. In this case the volume of cube A would be 125 units<sup>3</sup> and we were given 61 cubes of 1 units<sup>3</sup>, 7 cubes of 8 units<sup>3</sup>, and 1 cubes of 64 units<sup>3</sup>.
 
 ---
 
