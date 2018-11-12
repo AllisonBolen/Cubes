@@ -120,7 +120,7 @@ All other output for the example matched what I calculated and I could not find 
 
 ### Approach:
 
-I think that this could be done by calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill box with.
+I think that this could be done by calculating the volume of the initial cube (box) and then keeping track of the volume of the cubes we want to fill box with.
 
 Given: a 10x10x10 box with a volume of w*l*h = 1000 units^3. With a list of cubes denoted by [b,c, ..., z] where the index of the cube in the list determines the volume the cube 2^(list index) and the value at that index is the number of cubes with that volume.
 
