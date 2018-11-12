@@ -80,7 +80,29 @@ should print the following to stdout:
 
 9     
 
-**I disagree with the output for this example, see bottom of readme for why.**
+**I disagree with the output for this example.**
+
+---
+### Why I disagree:
+
+For the above example my program calculates:
+1000
+
+-1
+
+9
+
+13
+
+59
+
+50070
+
+2
+
+This differs from the problem statement example on two instances:
+instead of 62 for cube info of: 5 5 5 61 7 1. I got 13. I think my answer is correct because we are looking for the
+*smallest* number of cubes it takes to fill cube A. In this case the volume of cube A would be 125 units<sup>3</sup> and we were given 61 cubes of voulme 1units cubed
 
 ---
 
