@@ -25,8 +25,8 @@ You are given a box with integer dimensions length x width x height. You
 also have a set of cubes whose sides are powers of 2, e.g. 1x1x1, 2x2x2,
 4x4x4 etc.
 You need to fill the box with cubes from the set.
-Write a program that for a given box and given set of cubes can determine
-the smallest number of cubes needed to fill the box.
+**Write a program that for a given box and given set of cubes can determine
+the smallest number of cubes needed to fill the box.**
 The set of cubes can be represented for instance as a list or array of
 numbers, where the position in the list designates the dimension of the
 cube. E.g. 100 10 1 means you have 100 cubes of 1x1x1 and 10 cubes of 2x2x2
