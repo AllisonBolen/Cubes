@@ -132,7 +132,7 @@ We can find the total number of cubes that fit in the box by subtracting cube at
 Edge cases:
 1. No cubes listed will fit the box
 2. Cubes listed will fit but not fill the box
-3. Cube A is zero volume
+3. The box is zero volume
 4. ...
 
 Coverage of edge cases can be seen in the cubeTests.py file
