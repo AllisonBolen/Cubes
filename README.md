@@ -64,6 +64,7 @@ Assume the file ‘problems.txt’ contains:
 Then executing
 ./myprogram < problems.txt
 should print the following to stdout:
+
 1000
 
 -1
