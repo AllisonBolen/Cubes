@@ -103,17 +103,30 @@ For the above example my program calculates:
 This differs from the problem statement example on two instances:
 
 1. Instead of 62 for cube info of: `5 5 5 61 7 1`. **I got 13**. I think my answer is correct because we are looking for the
-*smallest* number of cubes it takes to fill cube A. In this case the volume of cube A would be 125 units<sup>3</sup> and we were given 61 cubes of 1 units<sup>3</sup>, 7 cubes of 8 units<sup>3</sup>, and 1 cubes of 64 units<sup>3</sup>.
+*smallest* number of cubes it takes to fill the box. In this case the volume of the box would be 125 units<sup>3</sup> and we were given 61 cubes of 1 units<sup>3</sup>, 7 cubes of 8 units<sup>3</sup>, and 1 cubes of 64 units<sup>3</sup>.
+
+The reason it should be 13 instead of 62:
+We will start by subtracting the largest amount first, this will minimize the number of cubes it takes to fill the box. We will subtract 64 units<sup>3</sup> from 125 units<sup>3</sup> to get 61 units<sup>3</sup> remaining. In other words we just filled our 125 units<sup>3</sup> cube with a 64 units<sup>3</sup> cube and now we have 61 units<sup>3</sup> left to fill. Since we just used up our 1 cube of volume 64 units<sup>3</sup> we then move to the next set of cubes with the largest volume. This would be our set of 7 cubes with 8 units<sup>3</sup> of volume. For this one we will see how many volume units of 8 can fit into 61 by using subtraction. We will subtract 8 until we either run out of cubes with this volume or until we can no longer fit 8 units<sup>3</sup> into the box. We find that 8units<sup>3</sup> fits in 61units<sup>3</sup> 7 times. So now we have used 8 cubes to fill our box with 5 units<sup>3</sup> left to fill. We will then use 5 of our 61 1 units<sup>3</sup> cubes to fill the remaining space. This leaves us with having used 13 cubes to fill the box, while minimizing the number of cubes it takes to fill the box.
+
+A way you could get 62 cubes as the answer for this example would be if you replaced the 7 cubes of 8 units<sup>3</sup> with 0 cubes of 8 units<sup>3</sup>. Then you would have 125 units<sup>3</sup> minus 64 units<sup>3</sup> leaving 61 units<sup>3</sup> left to be filled. With the remaining space in the box you could use all 1 of your 1 units<sup>3</sup> to completely fill the box thus resulting in 62 cubes being used.
+
+2. Instead of 9 cubes for cube info of `1 1 9 9 1`. **I got 2**. I think my answer is correct because we are looking for the
+*smallest* number of cubes it takes to fill the box. In this case the volume of the box would be 9 units<sup>3</sup> and we were given 9 cubes of 1 units<sup>3</sup>, 9 cubes of 8 units<sup>3</sup>, and 1 cube of 64 units<sup>3</sup>.
+
+The reason it should be 2 instead of 9:
+We will start by subtracting the largest amount first, this will minimize the number of cubes it takes to fill the box. We will subtract 8 units<sup>3</sup> from 9 units<sup>3</sup> to get 1 units<sup>3</sup> remaining. In other words we just filled our 9 units<sup>3</sup> cube with a 8 units<sup>3</sup> cube and now we have 1 units<sup>3</sup> left to fill. Since we just used up our one of our 9 cubes of volume 8 units<sup>3</sup> we now have 8 cubes of 8 units<sup>3</sup>. We can no longer fit cubes of 8 units<sup>3</sup> into the space remaining in the box so we then move to the next set of cubes with the largest volume. This would be our set of 9 cubes with 1 units<sup>3</sup> of volume. For this one we will see how many volume units of 1 can fit into 1 by using subtraction. We will subtract 1 until we either run out of cubes with this volume or until we can no longer fit 1 units<sup>3</sup> into the box. We find that 1units<sup>3</sup> fits in 1units<sup>3</sup> 1 time. So now we have used 1 cubes to fill our box with 0 units<sup>3</sup> left to fill. This leaves us with having used 2 cubes to fill the box, while minimizing the number of cubes it takes to fill the box.
+
+A way you could get 9 cubes to fill the box would be if you did not have any cubes of 8 units<sup>3</sup> and only have cubes of 1 units<sup>3</sup>. Then it will take 9 cubes of 1 units<sup>3</sup> to fill the box.
 
 ---
 
 ### Approach:
 
-I think that this could be done by calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill cube A with.
+I think that this could be done by calculating the volume of the initial cube (Cube A) and then keeping track of the volume of the cubes (Cube N) we want to fill box with.
 
-Given: a 10x10x10 cube A with a volume of w*l*h = 1000 units^3. With a list of cubes denoted by [b,c, ..., z] where the index of the cube in the list determines the volume the cube 2^(list index) and the value at that index is the number of cubes with that volume.
+Given: a 10x10x10 box with a volume of w*l*h = 1000 units^3. With a list of cubes denoted by [b,c, ..., z] where the index of the cube in the list determines the volume the cube 2^(list index) and the value at that index is the number of cubes with that volume.
 
-We can find the total number of cubes that fit in cube A by subtracting cube at N's volume from cube A's volume to see if that cube will fit. Once cube A's volume is zero we can no longer fit other cubes in cube A and thus we end the sequence.
+We can find the total number of cubes that fit in the box by subtracting cube at N's volume from the box's volume to see if that cube will fit. Once the box's volume is zero we can no longer fit other cubes in the box and thus we end the sequence.
 
 ---
 
