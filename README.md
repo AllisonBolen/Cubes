@@ -70,15 +70,15 @@ should print the following to stdout:
 
 9
 
-62     **I disagree with this**
+62     
 
 59
 
 50070
 
-9      **I also disagree with this**
+9     
 
-**see bottom of readme for why**
+**I disagree with the output for this example, see bottom of readme for why**
 
 ---
 
