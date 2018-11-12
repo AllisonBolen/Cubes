@@ -136,3 +136,8 @@ Edge cases:
 4. ...
 
 Coverage of edge cases can be seen in the cubeTests.py file
+
+---
+
+### Optimization:
+The big O of this solution is O(n<sup>3</sup>) at least. I am calculating this based on the primary calculation of the program. I am not counting the parsing time because that will not change depending on the approach to this solution. This is O(n<sup>3</sup>) because the for loop to loop through n number of lines in a file and then the for loop to loop through cubes in line and then a while loop to fill a box full of cubes. I chose this approach because it was the simplest to think through and explain. Though it might not be the best efficiency wise.
