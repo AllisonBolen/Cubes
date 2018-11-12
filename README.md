@@ -70,13 +70,15 @@ should print the following to stdout:
 
 9
 
-62
+62     ** I disagree with this **
 
 59
 
 50070
 
-9
+9      ** I also disagree with this **
+
+**see bottom of readme for why**
 
 ---
 
