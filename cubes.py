@@ -1,13 +1,16 @@
 import sys, math
 
 def main():
+    '''
+    Given file data about cubes we will find the smallest number of cubes it takes to fill cube A
+    '''
     cubeInfo = parseInput() # parse input
-    for info in range(0, len(cubeInfo)):
-        cubeA, nCubes = volumeofCubeA(cubeInfo[info])
-        fillCubeCount = calculateCubes(cubeA, nCubes)
+    for info in range(0, len(cubeInfo)): # loop through the lines of the list
+        cubeA, nCubes = volumeofCubeA(cubeInfo[info]) # extract volume and cube list data
+        fillCubeCount = calculateCubes(cubeA, nCubes) # whats the smallest number of cubes it takes to fill cube A
         print(fillCubeCount)
         print()
-        fillCubeCount = 0
+        fillCubeCount = 0 # reset for next line
 
 def calculateCubes( cubeA, nCubes):
     '''
@@ -19,22 +22,26 @@ def calculateCubes( cubeA, nCubes):
         -1 if we cant fill cube A
         fillCubeCount if we did fill cube A
     '''
-    # go backwards through the list to subtract the maximum cube sizes first
-    # this will minimize the number of cubes it takes to fill cube A
     if cubeA == 0: # the cube is not fillable because it dosent take up space
         return -1
+
     fillCubeCount = 0
     for cube in range(len(nCubes)-1, -1, -1):
+        # go backwards through the list to subtract the maximum cube sizes first
+        # this will minimize the number of cubes it takes to fill cube A
         volumeOfCubeN = pow(pow(2,cube),3)
-    # continue subtracting values when we still have space left in Cube A and we still have cubes in to subtract with
-    # and the volume of cube N is not zero and the volume of cube N is less than the volume of cube A
+
+        # continue subtracting values when we still have space left in Cube A and we still have cubes in to subtract with
+        # and the volume of cube N is not zero and the volume of cube N is less than the volume of cube A
         while(cubeA >= 0  and nCubes[cube] > 0 and nCubes[cube] != 0 and volumeOfCubeN <= cubeA):
             # print("cubeA: " + str(cubeA) + " - volume of cube at " +str(cube)+ " where the volume is " + str(pow(pow(2,cube),3)))
             cubeA = cubeA - volumeOfCubeN
             nCubes[cube] = nCubes[cube] - 1
             fillCubeCount = fillCubeCount + 1
+
     if cubeA > 0: # we did not fill the cube all the way
         return -1
+
     return fillCubeCount
 
 def volumeofCubeA( listOfCubes ):
