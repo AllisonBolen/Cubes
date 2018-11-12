@@ -2,10 +2,11 @@
 
 ### How To:
 What you need to run it:
+
 0. Clone repo
 1. Have python3 installed
 2. I have configured multiple ways for you to run this script:
-    * ./runner problems.txt
+    * ./runner.sh problems.txt
     * python3 cubes.py problems.txt
     * python3 cubes.py < problems.txt
 3. You can run the unit test file using:
